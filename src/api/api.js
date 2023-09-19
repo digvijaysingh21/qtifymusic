@@ -9,4 +9,5 @@ export const  fetchTopAlbums = async () => {
     }catch(err){
         console.log(err);
     }
-}
+};
+
