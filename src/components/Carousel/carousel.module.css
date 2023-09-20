@@ -1,0 +1,31 @@
+.wrapper{
+    position: relative;
+}
+
+.leftNavigation{
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.rightNavigation{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+@media only screen and (max-width: 576px) {
+	.leftNavigation {
+		display: none;
+	}
+
+	.rightNavigation {
+		display: none;
+	}
+}

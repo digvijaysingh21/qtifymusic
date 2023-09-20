@@ -3,16 +3,17 @@ import styles from './card.module.css';
 import { Chip } from '@mui/material';
 
 const Card = ({data,type}) =>{
+
     const getCard = (type)=>{
         switch(type){
-            case "album" :{
+            case "album" :
                 const {image,follows,title,songs} = data;
                 return(
                     <div className={styles.wrapper}>
                         <div className={styles.card}>
                             <img src={image} alt="topalbum"/>
                             <div className={styles.banner}>
-                                <Chip className={styles.chip} label={`${follows}`} Follows size="small"/>
+                                <Chip className={styles.chip} label={`${follows} Follows`} size="small"/>
                             </div>
                         </div>
                         <div className={styles.titleWrapper}>
@@ -20,7 +21,6 @@ const Card = ({data,type}) =>{
                         </div>
                     </div>
                 )
-            }
             default:
                 return <></>;
         }
