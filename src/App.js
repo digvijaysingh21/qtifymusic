@@ -6,7 +6,8 @@ import Hero from './components/Hero/hero';
 // import Card from './components/Card/card';
 import Section from './components/Section/section';
 import FilterTab from './components/FilterTab/FilterTab';
-
+import { accordionData } from "./config/helper"
+import CustomAccordion from './components/Accordion/CustomAccordion';
 
 
 function App() {
@@ -85,10 +86,10 @@ function App() {
       })} */}
       <div className="sectionWrapper">
       <div>
-      <Section data={topAlbumData} title={"Top Albums"}/>
+      <Section data={topAlbumData} type="album" title={"Top Albums"} loadingState={loadingState.topAlbum} />
       </div>
       <div>
-      <Section data={newAlbumData} title={"New Albums"}/>
+      <Section data={newAlbumData} type="album" title={"New Albums"} loadingState={loadingState.newAlbum}/>
       </div>
       </div>
       <hr className="line"></hr>
@@ -98,6 +99,17 @@ function App() {
         </div>
       <FilterTab data={allSongaData} loadingState={loadingState.allSongs}/>
 
+      </div>
+      <hr className='line'></hr>
+      <div className='accordionWrapper'>
+        <h1 className='accordionHeader'>FAQs</h1>
+        {accordionData?.length ?(
+          accordionData.map((each,index) =>{
+            return <CustomAccordion key={index} data={each}/>
+          })
+        ):(
+          <></>
+        )}
       </div>
     </div>
   );

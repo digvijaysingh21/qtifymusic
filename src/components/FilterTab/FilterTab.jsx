@@ -37,10 +37,23 @@ const FilterTab = ({data, loadingState}) => {
             <Box sx={{borderBottom: 1, borderColor: "divider"}}>
                 <Tabs
                     value={value}
+                    sx={{
+                        ".Mui-selected": {
+                        color: `white`,
+                        },
+                        }}
+                    TabIndicatorProps={{
+                        style: {
+                          backgroundColor: "#34C94B"
+                        }
+                      }}
                     onChange={handleTabs}
                     aria-label="basic tabs"
-                    id={styles.tabs_wrapper}>{allSongsTabs.map((each)=>(
-                        <Tab label={each} key={each} sx={{color: "white"}}/>
+                    id={styles.tabs_wrapper}>
+
+                        {allSongsTabs.map((each)=>(
+                        <Tab label={each} key={each} sx={{color: "white"}}
+                    />
                     ))}
                 </Tabs>
             </Box>
@@ -63,4 +76,4 @@ const FilterTab = ({data, loadingState}) => {
   )
 }
 
-export default FilterTab
+export default FilterTab;
