@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './card.module.css';
-import { Chip } from '@mui/material';
+import {Tooltip, Chip } from '@mui/material';
 
 
 
@@ -12,6 +12,7 @@ const Card = ({data,type}) =>{
             case "album" :
                 // const {image,follows,title,songs} = data;
                 return(
+                    <Tooltip title={`${data.songs.length} songs`} placement="top" arrow >
                     <div className={styles.wrapper}>
                         <div className={styles.card}>
                             <img src={data.image} alt="topalbum"/>
@@ -23,6 +24,7 @@ const Card = ({data,type}) =>{
                             <p>{data.title}</p>
                         </div>
                     </div>
+                    </Tooltip>
                 );
                 case "songs":
 				return (

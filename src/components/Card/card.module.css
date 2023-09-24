@@ -33,3 +33,18 @@
    overflow: hidden;
    text-overflow: ellipsis;
 }
+
+.titleWrapper p{
+   font-size: large;
+   margin-top: 5px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+#pill{
+    font-size: 12px;
+    background-color: var(--color-black);
+    padding: 6px;
+    width: max-content;
+    border-radius: 10px;
+}
